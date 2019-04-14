@@ -498,44 +498,34 @@ function getMatrixProduct(m1, m2) {
  */
 function evaluateTicTacToePosition(position) {
 
-    /*let res = undefined;
-    position = position.map(el => {
-        let newEl = el.map(elem => {
-            if(!elem) {
-                return 'v';
-            }
-        })
-        return newEl;
-    })
+    for(let i = 0; i < 3; i++) {
+        if( position[0][i] === position[1][i] 
+            && position[1][i] === position[2][i]
+            && position[2][i] ) {
 
-    /*position.forEach( el => {
-        let q = el.reduce((a,b) => a + b);
-        if(q === 'XXX' || q === '000') {
-            res = q[0];
+            return position[0][i];
         }
-    })
-    position.forEach((el,i) => {
-        let q = [position[0][i], position[1][i], position[2][i]].reduce((a,b) => a + b);
+        if( position[i][0] === position[i][1]
+            && position[i][1] === position[i][2]
+            && position[i][1] ) {
 
-        if(q === 'XXX' || q === '000') {
-            res = q[0];
-        }
-    })
-    if(!res) {
-        let q = [position[0][0], position[1][1], position[2][2]].reduce((a,b) => a + b);
-
-        if(q === 'XXX' || q === '000') {
-            res = q[0];
+            return position[i][1];
         }
     }
-    if(!res) {
-        let q = [position[0][2], position[1][1], position[2][0]].reduce((a,b) => a + b);
+    if(position[0][2]=== position[1][1] 
+        && position[1][1]  === position[2][0]
+        && position[1][1] ) {
 
-        if(q === 'XXX' || q === '000') {
-            res = q[0];
-        }
+        return position[1][1];
     }
-    return res;*/
+    if(position[0][0]=== position[1][1] 
+        && position[1][1]  === position[2][2]
+        && position[1][1]) {
+
+        return position[1][1];
+    }
+    return undefined;
+
 }
 
 
